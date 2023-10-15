@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://qijc5yltdhko"
+
+[deps]
+
+files=["res://Assets/Dialogue/NPC1/State1Edges.1.translation", "res://Assets/Dialogue/NPC1/State1Edges.Where are we?.translation"]
+
+source_file="res://Assets/Dialogue/NPC1/State1Edges.csv"
+dest_files=["res://Assets/Dialogue/NPC1/State1Edges.1.translation", "res://Assets/Dialogue/NPC1/State1Edges.Where are we?.translation"]
+
+[params]
+
+compress=true
+delimiter=0

@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://d1vmgd7odwawi"
+
+[deps]
+
+files=["res://Assets/Dialogue/NPC1/State1Nodes.Hello Sir. How may I help you?.translation", "res://Assets/Dialogue/NPC1/State1Nodes.4.translation"]
+
+source_file="res://Assets/Dialogue/NPC1/State1Nodes.csv"
+dest_files=["res://Assets/Dialogue/NPC1/State1Nodes.Hello Sir. How may I help you?.translation", "res://Assets/Dialogue/NPC1/State1Nodes.4.translation"]
+
+[params]
+
+compress=true
+delimiter=0

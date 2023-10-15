@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://b4wl3covq6wi0"
+
+[deps]
+
+files=["res://Assets/Dialogue/NPC1/State2Nodes.You said you know where we are, so where are we?.translation", "res://Assets/Dialogue/NPC1/State2Nodes.3.translation"]
+
+source_file="res://Assets/Dialogue/NPC1/State2Nodes.csv"
+dest_files=["res://Assets/Dialogue/NPC1/State2Nodes.You said you know where we are, so where are we?.translation", "res://Assets/Dialogue/NPC1/State2Nodes.3.translation"]
+
+[params]
+
+compress=true
+delimiter=0

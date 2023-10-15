@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://c1ukghtinpq7t"
+
+[deps]
+
+files=["res://Assets/Dialogue/NPC1/State2Edges.1.translation", "res://Assets/Dialogue/NPC1/State2Edges.We're in a a dungeon..translation"]
+
+source_file="res://Assets/Dialogue/NPC1/State2Edges.csv"
+dest_files=["res://Assets/Dialogue/NPC1/State2Edges.1.translation", "res://Assets/Dialogue/NPC1/State2Edges.We're in a a dungeon..translation"]
+
+[params]
+
+compress=true
+delimiter=0
