@@ -8,7 +8,7 @@ static var session_index = 0
 static func load_dialogue(npc):
 	
 	# Opens the file
-	var node_file = FileAccess.open("res://Assets/Dialogue/NPC" + str(npc) + "/" + Save.get_npc_state(npc) + "Nodes.csv", FileAccess.READ)
+	var node_file = FileAccess.open("res://Assets/Dialogue/" + npc + "/" + Save.get_npc_state(npc) + "Nodes.csv", FileAccess.READ)
 
 	# Reads until the end of the file
 	while not node_file.eof_reached():
@@ -32,7 +32,7 @@ static func load_dialogue(npc):
 	node_file.close()
 
 	# Opens the file
-	var edge_file = FileAccess.open("res://Assets/Dialogue/NPC" + str(npc) + "/" + Save.get_npc_state(npc) + "Edges.csv", FileAccess.READ)
+	var edge_file = FileAccess.open("res://Assets/Dialogue/" + npc + "/" + Save.get_npc_state(npc) + "Edges.csv", FileAccess.READ)
 
 	# Reads until the end of the file
 	while not edge_file.eof_reached():
