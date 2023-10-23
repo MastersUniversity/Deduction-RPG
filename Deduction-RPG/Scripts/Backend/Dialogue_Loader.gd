@@ -77,5 +77,11 @@ static func get_response(npc, index):
 		# Override the old response with the new options
 		response[1] = new_response[1]
 	
+	elif dialogue[session_index].type == 3:
+		if Inventory.has_item(dialogue[session_index].action):
+			response[1].remove(0)
+		else:
+			response[1].remove(1)
+			
 	# Return the dialogue
 	return response
