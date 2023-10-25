@@ -69,6 +69,7 @@ func _process(delta):
 			elif $Button5.button_pressed:
 				choice = 5
 			if choice > -1:
+				buttonOptions(0)
 				stateDictionary["loaderResult"]=Dialogue_Loader.get_response(npcName,result[1][choice])
 
 func _on_player_npc_interact(npcName):
@@ -88,19 +89,4 @@ var stateDictionary = {
 	"loaderResult" : []
 	
 }
-func backend(npcName,dialogChoice = 1):
-	if dialogChoice == 0:
-		dialogChoice = "bye"
-	elif dialogChoice == 1:
-		dialogChoice = "HI"
-	
-	
-	if npcName == "NPC":
-		return ["Hi",[]]
-			
-	elif npcName == "NPC1":
-		if dialogChoice == "bye":
-			return ["bye",[]]
-		else:
-			return ["hi",["bye","HI"]]
 
