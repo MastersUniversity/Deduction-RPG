@@ -1,0 +1,106 @@
+extends CanvasLayer
+
+var accumulator = 0
+var fixedTimeStep = 0.016*4#0.016 is a 1/60 fram
+
+signal lockUpdate(boolean)
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	buttonOptions(0)
+	$NPC_dialog.visible = false
+	$exit_prompt.visible = false
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	accumulator += delta
+	while accumulator > fixedTimeStep:
+		accumulator -= fixedTimeStep
+	if stateDictionary["npc"] != "":
+		$NPC_dialog.visible = true
+		var result
+		var npcName = stateDictionary["npc"]
+		if stateDictionary["loaderResult"] == []:#first interaction
+			result = backend(npcName)
+		else:#subsequent interactions
+			result = stateDictionary["loaderResult"]
+		$NPC_dialog.text = result[0]
+			
+		if len(result[1]) == 0 :#end of conversation
+			buttonOptions(0)
+			$exit_prompt.visible = true
+			if Input.is_action_just_pressed("interact"):
+				$exit_prompt.visible = false
+				$NPC_dialog.visible = false
+				lockUpdate.emit(true)
+				#reset
+				stateDictionary["npc"] = ""
+				stateDictionary["loaderResult"] = []
+		else:#conversation continued
+			buttonOptions(len(result[1]))
+			
+			#applies choice text to buttons
+			if len(result[1]) > 0:
+				$Button0.text = result[1][0]
+			if len(result[1]) > 1:
+				$Button1.text = result[1][1]
+			if len(result[1]) > 2:
+				$Button2.text = result[1][2]	
+			if len(result[1]) > 3:
+				$Button3.text = result[1][3]
+			if len(result[1]) > 4:
+				$Button4.text = result[1][4]
+			if len(result[1]) > 5:
+				$Button5.text = result[1][5]	
+			
+			#track button pressed
+			var choice = -1	
+			if $Button0.button_pressed:
+				choice = 0 
+			elif $Button1.button_pressed:
+				choice = 1
+			elif $Button2.button_pressed:
+				choice = 2
+			elif $Button3.button_pressed:
+				choice = 3
+			elif $Button4.button_pressed:
+				choice = 4
+			elif $Button5.button_pressed:
+				choice = 5
+			if choice > -1:
+				stateDictionary["loaderResult"]=backend(npcName,choice)
+
+func _on_player_npc_interact(npcName):
+	stateDictionary["npc"] = npcName 
+	
+func buttonOptions(onButtons):
+	$Button0.visible = onButtons > 0
+	$Button1.visible = onButtons > 1
+	$Button2.visible = onButtons > 2
+	$Button3.visible = onButtons > 3
+	$Button4.visible = onButtons > 4
+	$Button5.visible = onButtons > 5
+		
+		
+var stateDictionary = {
+	"npc" : "",
+	"loaderResult" : []
+	
+}
+func backend(npcName,dialogChoice = 1):
+	if dialogChoice == 0:
+		dialogChoice = "bye"
+	elif dialogChoice == 1:
+		dialogChoice = "HI"
+	
+	
+	if npcName == "NPC":
+		return ["Hi",[]]
+			
+	elif npcName == "NPC1":
+		if dialogChoice == "bye":
+			return ["bye",[]]
+		else:
+			return ["hi",["bye","HI"]]
+

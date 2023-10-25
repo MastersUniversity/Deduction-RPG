@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqexcpw7i62ji"]
+
+[ext_resource type="Script" path="res://canvas_layer.gd" id="1_d3ax1"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_d3ax1")
+
+[node name="Button0" type="Button" parent="."]
+offset_left = 24.0
+offset_top = 520.0
+offset_right = 568.0
+offset_bottom = 552.0
+text = "ERROR 0"
+
+[node name="Button1" type="Button" parent="."]
+offset_left = 584.0
+offset_top = 520.0
+offset_right = 1128.0
+offset_bottom = 552.0
+text = "ERROR"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 24.0001
+offset_top = 560.0
+offset_right = 568.0
+offset_bottom = 592.0
+text = "ERROR"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 584.0
+offset_top = 560.0
+offset_right = 1128.0
+offset_bottom = 592.0
+text = "ERROR"
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 24.0
+offset_top = 600.0
+offset_right = 568.0
+offset_bottom = 632.0
+text = "ERROR"
+
+[node name="Button5" type="Button" parent="."]
+offset_left = 584.0
+offset_top = 600.0
+offset_right = 1128.0
+offset_bottom = 632.0
+text = "ERROR"
+
+[node name="NPC_dialog" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 456.0
+offset_right = 1136.0
+offset_bottom = 488.0
+text = "Error!
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="exit_prompt" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 1144.0
+offset_bottom = 48.0
+text = "Press SPACE to exit"
+horizontal_alignment = 1
+vertical_alignment = 1
