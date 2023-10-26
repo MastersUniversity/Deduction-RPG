@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://4i3antgx1lrl"]
+
+[ext_resource type="PackedScene" uid="uid://li84anpt6tgt" path="res://player.tscn" id="1_0ugav"]
+[ext_resource type="PackedScene" uid="uid://dqexcpw7i62ji" path="res://canvas_layer.tscn" id="2_emj8v"]
+[ext_resource type="Script" path="res://NPC1.gd" id="3_71yfj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2n5ev"]
+size = Vector2(64, 64)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qdn70"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_0ugav")]
+position = Vector2(96, -160)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("2_emj8v")]
+
+[node name="NPC1" type="Area2D" parent="."]
+position = Vector2(-192, -128)
+script = ExtResource("3_71yfj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC1"]
+position = Vector2(32, -32)
+shape = SubResource("RectangleShape2D_2n5ev")
+
+[node name="Sprite2D" type="Sprite2D" parent="NPC1"]
+position = Vector2(32, -32)
+scale = Vector2(64, 64.5)
+texture = SubResource("PlaceholderTexture2D_qdn70")
+
+[connection signal="npcInteract" from="player" to="CanvasLayer" method="_on_player_npc_interact"]
+[connection signal="lockUpdate" from="CanvasLayer" to="player" method="_on_canvas_layer_lock_update"]
