@@ -11,6 +11,7 @@ size = Vector2(64, 64)
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qdn70"]
 
 [node name="game_scene" type="Node2D"]
+position = Vector2(1152, -2112)
 
 [node name="player" parent="." instance=ExtResource("1_0ugav")]
 position = Vector2(-576, 328)
@@ -18,11 +19,12 @@ position = Vector2(-576, 328)
 [node name="Camera2D2" type="Camera2D" parent="player"]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="player"]
-z_index = 12
+z_index = 9
 offset_left = -576.0
 offset_top = -328.0
 offset_right = 576.0
 offset_bottom = 312.0
+metadata/_edit_use_anchors_ = true
 
 [node name="SubViewport" type="SubViewport" parent="player/SubViewportContainer"]
 transparent_bg = true
@@ -35,7 +37,7 @@ render_target_update_mode = 4
 layer = 10
 
 [node name="NPC1" type="Area2D" parent="."]
-position = Vector2(-320, 352)
+position = Vector2(-1472, 2120)
 script = ExtResource("3_71yfj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC1"]
@@ -50,7 +52,7 @@ texture = SubResource("PlaceholderTexture2D_qdn70")
 [node name="CanvasLayer" parent="." instance=ExtResource("2_emj8v")]
 
 [node name="NPC2" type="Area2D" parent="."]
-position = Vector2(-432, 496)
+position = Vector2(-1536, 2240)
 script = ExtResource("3_71yfj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC2"]

@@ -16,6 +16,8 @@ var iUnlock = true
 
 signal npcInteract(npcName)
 
+func _ready():
+	self.global_position = Vector2(0,0)
 func _process (delta):
 	#locks actions while in a menu of some kind
 	if unlock and iUnlock:

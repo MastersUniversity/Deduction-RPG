@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://co5und4gfgegy"]
+
+[ext_resource type="PackedScene" uid="uid://li84anpt6tgt" path="res://player.tscn" id="1_cuogk"]
+[ext_resource type="PackedScene" uid="uid://bdtkp668lus6y" path="res://inventory_layer.tscn" id="2_5a13r"]
+
+[node name="player_scene" type="Node"]
+
+[node name="player" parent="." instance=ExtResource("1_cuogk")]
+position = Vector2(-576, 328)
+
+[node name="Camera2D2" type="Camera2D" parent="player"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="player"]
+z_index = 9
+offset_left = -576.0
+offset_top = -328.0
+offset_right = 576.0
+offset_bottom = 312.0
+
+[node name="SubViewport" type="SubViewport" parent="player/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 640)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="CanvasLayerIn" parent="player/SubViewportContainer/SubViewport" instance=ExtResource("2_5a13r")]
+layer = 10
