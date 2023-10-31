@@ -1,6 +1,6 @@
 class_name Save
 
-static var npc_states = {"NPC1":"State1"}
+static var npc_states = {"Hunulf":"FirstMeet","Nesma":"NotUnderstood","Gawain":"BeforePassword","CellNote":"Default"}
 
 
 static func save_npc_states():

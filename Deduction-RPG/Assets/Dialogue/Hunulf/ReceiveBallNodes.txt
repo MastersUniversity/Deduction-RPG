@@ -1,0 +1,9 @@
+1,"Thank you for this, friend. My name is Hunulf. You wanted to ask me something? I can answer you now.",5
+1,Longer than you from the smell of it. You’re fresh.,1
+0,"As for time, I’m not sure. I cannot see the moon down here and the sun never shows himself nor do the guards talk about time. So I do not know how long I’ve been here.",
+0,Don’t you feel better when YOU have something to remind you of home or a piece of yourself that you’ve forgotten?,
+1,I don’t know the whole thing. I only know one part of it is ‘Bellows’. Sorry I don’t know more then that.,1
+0,"For now, I gather my strength and then claw my way out. Perhaps one day, I’ll see you again in the woods",
+0,The Baron-he’s got the smell of dark magic on him. I bet it’s how he fools the townsfolk but I’m a forest-dweller so I don’t much. You’d have to ask others here about him.,
+1,Dead.,1
+0,"Well, I don’t know for sure. We were blindsided by the humans and scattered. When I get out, I will find them or start anew.",

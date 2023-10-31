@@ -49,13 +49,14 @@ text = "ERROR"
 
 [node name="NPC_dialog" type="Label" parent="."]
 offset_left = 16.0
-offset_top = 456.0
+offset_top = 317.0
 offset_right = 1136.0
-offset_bottom = 488.0
+offset_bottom = 504.0
 text = "Error!
 "
 horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 2
 
 [node name="exit_prompt" type="Label" parent="."]
 offset_left = 24.0
@@ -65,3 +66,13 @@ offset_bottom = 48.0
 text = "Press SPACE to exit"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="."]
+visible = false
+offset_left = 24.0
+offset_top = 520.0
+offset_right = 1127.0
+offset_bottom = 551.0
+caret_blink = true
+
+[connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]

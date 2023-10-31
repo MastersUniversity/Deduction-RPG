@@ -2,12 +2,14 @@ extends CanvasLayer
 
 var accumulator = 0
 var fixedTimeStep = 0.016*4#0.016 is a 1/60 fram
+var input_entered = false
 
 signal lockUpdate(boolean)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	buttonOptions(0)
+	$LineEdit.hide()
 	$NPC_dialog.visible = false
 	$exit_prompt.visible = false
 
@@ -37,6 +39,17 @@ func _process(delta):
 				#reset
 				stateDictionary["npc"] = ""
 				stateDictionary["loaderResult"] = []
+		elif result[1][0] == "Correct":
+			buttonOptions(0)
+			$LineEdit.show()
+			if input_entered:
+				input_entered = false
+				$LineEdit.hide()
+				
+				buttonOptions(0)
+				stateDictionary["loaderResult"]=Dialogue_Loader.get_response(npcName,$LineEdit.text)
+				$LineEdit.clear()
+
 		else:#conversation continued
 			buttonOptions(len(result[1]))
 			
@@ -90,3 +103,7 @@ var stateDictionary = {
 	
 }
 
+
+
+func _on_line_edit_text_submitted(new_text):
+	input_entered = true

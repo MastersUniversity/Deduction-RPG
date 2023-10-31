@@ -1,0 +1,15 @@
+0,1,What’s your name?
+0,2,I was wondering if you knew the password to get outside.
+2,3,"Oh, pity. I thought you’d be more helpful"
+2,4,I didn’t mean—I just figured you’d know something since you seem to have been here longer
+4,5,???
+4,6,Moonlight?
+6,7,...
+7,8,Here. This might help you. (Give Glowing Ball)
+8,9,...
+7,10,Maybe I should go find something that gives him some light?
+4,11,I thought your kind had good night sight.
+2,12,I mean...aren't you kind of a dog?
+12,13,He’s clawing the bars. I better not bring that up again
+0,14,To get you out so we can see who’s stronger.
+14,15,You don’t think i’ve seen your kind before?

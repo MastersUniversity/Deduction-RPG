@@ -58,30 +58,38 @@ static func start_conversation(npc):
 
 # Gets the next NPC response based on the player response chosen (index)
 static func get_response(npc, index):
-	
-	# Update the session index to the next dialogue node
-	session_index = dialogue[session_index].connections[index]
-	
-	# Get data about the next dialogue node 
-	var response = [dialogue[session_index].text,dialogue[session_index].get_descriptions()]
-	
-	# If the dialogue node changes the state
-	if dialogue[session_index].type == 2:
+	if index in dialogue[session_index].connections.keys():
+		# Update the session index to the next dialogue node
+		session_index = dialogue[session_index].connections[index]
 		
-		# Change the state
-		Save.set_npc_state(npc, dialogue[session_index].action)
+		# Get data about the next dialogue node 
+		var response = [dialogue[session_index].text,dialogue[session_index].get_descriptions()]
 		
-		# Start a new conversation from the new state
-		var new_response = start_conversation(npc)
-		
-		# Override the old response with the new options
-		response[1] = new_response[1]
-	
-	elif dialogue[session_index].type == 3:
-		if Inventory.has_item(dialogue[session_index].action):
-			response[1].remove(0)
-		else:
-			response[1].remove(1)
+		# If the dialogue node changes the state
+		if dialogue[session_index].type == 2:
 			
-	# Return the dialogue
-	return response
+			# Change the state
+			Save.set_npc_state(npc, dialogue[session_index].action)
+			
+			# Start a new conversation from the new state
+			var new_response = start_conversation(npc)
+			
+			# Override the old response with the new options
+			response[1] = new_response[1]
+		
+		elif dialogue[session_index].type == 3:
+			if Inventory.has_item(dialogue[session_index].action):
+				response[1].remove_at(1)
+			else:
+				response[1].remove_at(0)
+		
+		elif dialogue[session_index].type == 5:
+			Inventory.add_item(Item_Loader.get_item(dialogue[session_index].action))
+				
+		# Return the dialogue
+		return response
+	else:
+		if dialogue[session_index].action == index:
+			return get_response(npc, "Correct")
+		else:
+			return get_response(npc, "Incorrect")

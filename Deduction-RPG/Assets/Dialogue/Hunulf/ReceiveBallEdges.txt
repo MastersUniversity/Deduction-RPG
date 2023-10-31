@@ -1,0 +1,8 @@
+0,1,How long have you been down here?
+1,2,...
+0,3,So anything moon-related calms down werewolves?
+0,4,Do you know the password to tell the guard?
+4,5,That’s ok. I can figure out the rest. What will you do now?
+0,6,Do you know who’s behind all this?
+0,7,You’re a werewolf-so where’s your pack?
+7,8,Oh...
