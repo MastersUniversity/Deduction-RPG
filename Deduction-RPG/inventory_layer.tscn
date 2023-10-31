@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdtkp668lus6y"]
+
+[ext_resource type="Script" path="res://inlayer.gd" id="1_2nlmg"]
+[ext_resource type="Script" path="res://BoxContainer.gd" id="2_i62dt"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_wgm4a"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+follow_viewport_enabled = true
+script = ExtResource("1_2nlmg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 32.0
+offset_top = 16.0
+offset_right = 1120.0
+offset_bottom = 192.0
+color = Color(0.313726, 0.258824, 0.0705882, 1)
+
+[node name="ItemContainer" type="BoxContainer" parent="."]
+custom_minimum_size = Vector2(128, 0)
+offset_left = 64.0
+offset_top = 32.0
+offset_right = 1088.0
+offset_bottom = 192.0
+script = ExtResource("2_i62dt")
+
+[node name="BoxContainer" type="BoxContainer" parent="ItemContainer"]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+tooltip_text = "description"
+vertical = true
+
+[node name="TextureRect" type="TextureRect" parent="ItemContainer/BoxContainer"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_wgm4a")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="ItemContainer/BoxContainer"]
+layout_mode = 2
+text = "item"
+horizontal_alignment = 1
+autowrap_mode = 2

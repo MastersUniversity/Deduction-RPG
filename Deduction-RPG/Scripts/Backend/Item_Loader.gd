@@ -5,7 +5,7 @@ static var items = {}
 static func load_items():
 	
 	# Opens the file
-	var item_file = FileAccess.open("res://Assets/Items.csv", FileAccess.READ)
+	var item_file = FileAccess.open("res://Assets/Items.txt", FileAccess.READ)
 
 	# Reads until the end of the file
 	while not item_file.eof_reached():
