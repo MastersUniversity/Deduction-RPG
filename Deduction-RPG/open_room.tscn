@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bqnqplqarruaa"]
+[gd_scene load_steps=17 format=3 uid="uid://dad2i3sn02t1a"]
 
 [ext_resource type="Texture2D" uid="uid://d30sskfxwgev0" path="res://Assets/Tilesets/Dungeon.png" id="1_dt88x"]
 [ext_resource type="Script" path="res://NPC1.gd" id="2_wy3oa"]
