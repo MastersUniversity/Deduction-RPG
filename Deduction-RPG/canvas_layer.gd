@@ -54,6 +54,7 @@ func _process(delta):
 				$LineEdit.clear()
 
 		else:#conversation continued
+			wait = false
 			buttonOptions(len(result[1]))
 			
 			#applies choice text to buttons
