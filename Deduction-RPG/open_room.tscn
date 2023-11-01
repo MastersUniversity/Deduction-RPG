@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bqnqplqarruaa"]
+[gd_scene load_steps=21 format=3 uid="uid://bqnqplqarruaa"]
 
 [ext_resource type="Texture2D" uid="uid://d30sskfxwgev0" path="res://Assets/Tilesets/Dungeon.png" id="1_dt88x"]
 [ext_resource type="Script" path="res://NPC1.gd" id="2_wy3oa"]
@@ -486,6 +486,16 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_5xh8f")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g7nnk"]
+size = Vector2(20, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxlf2"]
+size = Vector2(16, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_utwvi"]
+size = Vector2(14, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7a0q"]
+size = Vector2(16, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xay3m"]
 size = Vector2(16, 16)
@@ -500,6 +510,8 @@ size = Vector2(30, 17)
 size = Vector2(10, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3qgpv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elyem"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -524,6 +536,11 @@ texture = ExtResource("3_8s6wl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hunulf"]
 shape = SubResource("RectangleShape2D_g7nnk")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Hunulf"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hunulf/StaticBody2D"]
+shape = SubResource("RectangleShape2D_mxlf2")
+
 [node name="Nesma" type="Area2D" parent="."]
 position = Vector2(-48, -56)
 script = ExtResource("2_wy3oa")
@@ -534,6 +551,11 @@ texture = ExtResource("6_p6cs7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nesma"]
 shape = SubResource("RectangleShape2D_g7nnk")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Nesma"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nesma/StaticBody2D"]
+shape = SubResource("RectangleShape2D_utwvi")
+
 [node name="Gawain" type="Area2D" parent="."]
 position = Vector2(-30, -120)
 script = ExtResource("2_wy3oa")
@@ -543,6 +565,11 @@ texture = ExtResource("7_rd28h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gawain"]
 shape = SubResource("RectangleShape2D_g7nnk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Gawain"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gawain/StaticBody2D"]
+shape = SubResource("RectangleShape2D_k7a0q")
 
 [node name="CellNote" type="Area2D" parent="."]
 position = Vector2(-11, 173)
@@ -591,6 +618,13 @@ condition_list = ["AfterPassword"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door2"]
 shape = SubResource("RectangleShape2D_3qgpv")
+
+[node name="MoonPhases" type="Area2D" parent="."]
+position = Vector2(70, -138)
+script = ExtResource("2_wy3oa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MoonPhases"]
+shape = SubResource("RectangleShape2D_elyem")
 
 [connection signal="npcInteract" from="player" to="CanvasLayer" method="_on_player_npc_interact"]
 [connection signal="lockUpdate" from="CanvasLayer" to="player" method="_on_canvas_layer_lock_update"]

@@ -1,0 +1,1 @@
+"Glowing Ball","It’s a medium-sized, white ball that glows softly in the dark. It’s fairly heavy so you probably shouldn’t bounce it.","glowing_ball.png"
