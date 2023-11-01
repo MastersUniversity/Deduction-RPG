@@ -3,7 +3,7 @@ extends CanvasLayer
 var accumulator = 0
 var fixedTimeStep = 0.016*4#0.016 is a 1/60 fram
 var input_entered = false
-
+var wait
 signal lockUpdate(boolean)
 
 # Called when the node enters the scene tree for the first time.
@@ -12,6 +12,7 @@ func _ready():
 	$LineEdit.hide()
 	$NPC_dialog.visible = false
 	$exit_prompt.visible = false
+	wait = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -32,7 +33,9 @@ func _process(delta):
 		if len(result[1]) == 0 :#end of conversation
 			buttonOptions(0)
 			$exit_prompt.visible = true
-			if Input.is_action_just_pressed("interact"):
+			if Input.is_action_just_pressed("interact") and wait :
+				wait = false
+			elif Input.is_action_just_pressed("interact"):
 				$exit_prompt.visible = false
 				$NPC_dialog.visible = false
 				lockUpdate.emit(true)

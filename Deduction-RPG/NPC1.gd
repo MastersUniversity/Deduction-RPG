@@ -2,8 +2,10 @@ extends Area2D
 
 
 func on_interact ():
-	print(1)
+	if self.name == "CellNote":
+		print("cell")
 	return self.name
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 150.0
+const SPEED = 50.0
 var player_velocity = Vector2()
 
 var interactDist = 64
