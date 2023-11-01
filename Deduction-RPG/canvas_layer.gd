@@ -42,6 +42,7 @@ func _process(delta):
 				#reset
 				stateDictionary["npc"] = ""
 				stateDictionary["loaderResult"] = []
+				wait = true
 		elif result[1][0] == "Correct":
 			buttonOptions(0)
 			$LineEdit.show()
